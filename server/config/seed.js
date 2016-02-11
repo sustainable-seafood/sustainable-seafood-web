@@ -7,6 +7,7 @@
 import sqldb from '../sqldb';
 var Thing = sqldb.Thing;
 var User = sqldb.User;
+var City = sqldb.City;
 
 Thing.sync()
   .then(() => {
@@ -60,5 +61,20 @@ User.sync()
     }])
     .then(() => {
       console.log('finished populating users');
+    });
+  });
+
+  City.sync()
+  .then(() => City.destroy({ where: {} }))
+  .then(() => {
+    City.bulkCreate([{
+      name: 'Hong Kong',
+      info: 'a great city'
+    }, {
+      name: 'Japan',
+      info: 'another great city'
+    }])
+    .then(() => {
+      console.log('finished populating cities');
     });
   });
