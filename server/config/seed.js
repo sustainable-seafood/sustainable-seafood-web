@@ -9,7 +9,7 @@ var Thing = sqldb.Thing;
 var User = sqldb.User;
 var City = sqldb.City;
 
-Thing.sync()
+Thing.sync({force: true})
   .then(() => {
     return Thing.destroy({ where: {} });
   })
@@ -44,7 +44,7 @@ Thing.sync()
     }]);
   });
 
-User.sync()
+User.sync({force: true})
   .then(() => User.destroy({ where: {} }))
   .then(() => {
     User.bulkCreate([{
@@ -64,15 +64,13 @@ User.sync()
     });
   });
 
-  City.sync()
+  City.sync({force: true})
   .then(() => City.destroy({ where: {} }))
   .then(() => {
     City.bulkCreate([{
-      name: 'Hong Kong',
-      info: 'a great city'
+      name: 'Hong Kong'
     }, {
-      name: 'Japan',
-      info: 'another great city'
+      name: 'Japan'
     }])
     .then(() => {
       console.log('finished populating cities');
