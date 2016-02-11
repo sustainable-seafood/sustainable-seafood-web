@@ -8,12 +8,13 @@ module.exports = {
     uri: 'mongodb://localhost/sustainableseafoodweb-test'
   },
   sequelize: {
-    uri: 'sqlite://',
+    uri: 'postgres://@localhost/sustainable-seafood-test',
     options: {
-      logging: false,
-      storage: 'test.sqlite',
+      dialect: 'postgres',
+      port: 5432,
+      host: 'localhost',
       define: {
-        timestamps: false
+        timestamps: true
       }
     }
   }
