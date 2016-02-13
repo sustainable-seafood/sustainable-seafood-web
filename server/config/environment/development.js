@@ -6,12 +6,13 @@ module.exports = {
 
   // Sequelize connecton opions
   sequelize: {
-    uri: 'sqlite://',
+    uri: 'postgres://@localhost/sustainable-seafood-development',
     options: {
-      logging: false,
-      storage: 'dev.sqlite',
+      dialect: 'postgres',
+      port: 5432,
+      host: 'localhost',
       define: {
-        timestamps: false
+        timestamps: true
       }
     }
   },

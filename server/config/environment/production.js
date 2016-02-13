@@ -14,13 +14,13 @@ module.exports = {
           8080,
 
   sequelize: {
-    uri:  process.env.SEQUELIZE_URI ||
-          'sqlite://',
+    uri:  process.env.SEQUELIZE_URI,
     options: {
-      logging: false,
-      storage: 'dist.sqlite',
+      dialect: 'postgres',
+      port: 5432,
+      host: 'localhost',
       define: {
-        timestamps: false
+        timestamps: true
       }
     }
   }

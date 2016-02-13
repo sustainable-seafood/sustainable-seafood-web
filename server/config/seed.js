@@ -7,8 +7,9 @@
 import sqldb from '../sqldb';
 var Thing = sqldb.Thing;
 var User = sqldb.User;
+var City = sqldb.City;
 
-Thing.sync()
+Thing.sync({force: true})
   .then(() => {
     return Thing.destroy({ where: {} });
   })
@@ -43,7 +44,7 @@ Thing.sync()
     }]);
   });
 
-User.sync()
+User.sync({force: true})
   .then(() => User.destroy({ where: {} }))
   .then(() => {
     User.bulkCreate([{
@@ -60,5 +61,16 @@ User.sync()
     }])
     .then(() => {
       console.log('finished populating users');
+    });
+  });
+
+  City.sync({force: true})
+  .then(() => City.destroy({ where: {} }))
+  .then(() => {
+    City.bulkCreate([{
+      name: 'Hong Kong'
+    }])
+    .then(() => {
+      console.log('finished populating cities');
     });
   });

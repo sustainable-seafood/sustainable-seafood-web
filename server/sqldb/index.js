@@ -14,6 +14,8 @@ var db = {
 };
 
 // Insert models below
+db.SeafoodType = db.sequelize.import('../api/seafood_type/seafood_type.model');
+db.City = db.sequelize.import('../api/city/city.model');
 db.Thing = db.sequelize.import('../api/thing/thing.model');
 db.User = db.sequelize.import('../api/user/user.model');
 
