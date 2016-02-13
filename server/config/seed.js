@@ -69,8 +69,6 @@ User.sync({force: true})
   .then(() => {
     City.bulkCreate([{
       name: 'Hong Kong'
-    }, {
-      name: 'Japan'
     }])
     .then(() => {
       console.log('finished populating cities');
