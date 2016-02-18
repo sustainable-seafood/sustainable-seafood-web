@@ -11,3 +11,4 @@ npm-debug.log
 */.DS_Store
 client/index.html
 client/app/config.js
+coverage

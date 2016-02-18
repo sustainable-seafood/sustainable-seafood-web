@@ -15,11 +15,10 @@ import errorHandler from 'errorhandler';
 import path from 'path';
 import lusca from 'lusca';
 import config from './environment';
-import passport from 'passport';
 import session from 'express-session';
-import sqldb from '../sqldb';
-import expressSequelizeSession from 'express-sequelize-session';
-var Store = expressSequelizeSession(session.Store);
+import connectMongo from 'connect-mongo';
+import mongoose from 'mongoose';
+var mongoStore = connectMongo(session);
 
 export default function(app) {
   var env = app.get('env');
@@ -32,7 +31,6 @@ export default function(app) {
   app.use(bodyParser.json());
   app.use(methodOverride());
   app.use(cookieParser());
-  app.use(passport.initialize());
 
   // Persist sessions with mongoStore / sequelizeStore
   // We need to enable sessions for passport-twitter because it's an
@@ -41,7 +39,10 @@ export default function(app) {
     secret: config.secrets.session,
     saveUninitialized: true,
     resave: false,
-    store: new Store(sqldb.sequelize)
+    store: new mongoStore({
+      mongooseConnection: mongoose.connection,
+      db: 'sustainable-seafood-web'
+    })
   }));
 
   /**

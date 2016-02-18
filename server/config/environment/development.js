@@ -4,20 +4,12 @@
 // ==================================
 module.exports = {
 
-  // Sequelize connecton opions
-  sequelize: {
-    uri: 'postgres://@localhost/sustainable-seafood-development',
-    options: {
-      dialect: 'postgres',
-      port: 5432,
-      host: 'localhost',
-      define: {
-        timestamps: true
-      }
-    }
+  // MongoDB connection options
+  mongo: {
+    uri: 'mongodb://localhost/sustainableseafoodweb-dev'
   },
 
   // Seed database on startup
-  seedDB: true
+  seedDB: false
 
 };

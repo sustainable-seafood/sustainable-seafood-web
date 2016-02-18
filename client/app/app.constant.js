@@ -3,7 +3,7 @@
 
 angular.module('sustainableSeafoodWebApp.constants', [])
 
-.constant('appConfig', {userRoles:['user','admin']})
+.constant('appConfig', {userRoles:['guest','user','admin']})
 
 ;
 })(angular);
