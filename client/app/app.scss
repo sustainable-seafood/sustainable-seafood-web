@@ -54,6 +54,7 @@ html, body, .body {
 
 // Component styles are injected through grunt
 // injector
+@import 'admin/admin.scss';
 @import 'routes/main/city/city.scss';
 @import 'routes/main/homepage/homepage.scss';
 @import 'routes/main/seafood-type/seafood-type.scss';
