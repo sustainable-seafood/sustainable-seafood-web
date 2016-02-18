@@ -1,4 +1,4 @@
-// Generated on 2016-02-11 using generator-angular-fullstack 3.2.0
+// Generated on 2016-02-18 using generator-angular-fullstack 3.3.0
 'use strict';
 
 module.exports = function (grunt) {
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
         },
         src: ['<%= yeoman.server %>/**/*.{spec,integration}.js']
       },
-      all: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js'],
+      all: ['<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock|app.constant).js'],
       test: {
         src: ['<%= yeoman.client %>/{app,components}/**/*.{spec,mock}.js']
       }
@@ -390,7 +390,8 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>',
           src: [
             'package.json',
-            '<%= yeoman.server %>/**/*'
+            '<%= yeoman.server %>/**/*',
+            '!<%= yeoman.server %>/config/local.env.sample.js'
           ]
         }]
       },
@@ -559,7 +560,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.server %>',
-          src: ['**/*.{js,json}'],
+          src: ['**/*.js'],
           dest: '<%= yeoman.dist %>/<%= yeoman.server %>'
         }]
       }
@@ -578,9 +579,7 @@ module.exports = function (grunt) {
     },
 
     injector: {
-      options: {
-
-      },
+      options: {},
       // Inject application script files into index.html (doesn't include bower)
       scripts: {
         options: {
@@ -603,8 +602,8 @@ module.exports = function (grunt) {
         files: {
           '<%= yeoman.client %>/index.html': [
                [
-                 '.tmp/{app,components}/**/!(*.spec|*.mock).js',
-                 '!{.tmp,<%= yeoman.client %>}/app/app.js'
+                 '<%= yeoman.client %>/{app,components}/**/!(*.spec|*.mock).js',
+                 '!{.tmp,<%= yeoman.client %>}/app/app.{js,ts}'
                ]
             ]
         }

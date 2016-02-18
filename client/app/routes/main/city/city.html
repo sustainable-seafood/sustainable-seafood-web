@@ -1,0 +1,13 @@
+<main aria-role="main" class="decision-page city-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">Please select<br>the city you are in:</h1>
+        <select name="city" data-ng-model="selectedCity" data-ng-options="city.id as city.name for city in CityService.cities" class="form-control">
+          <option value="" disabled selected>Pick a city</option>
+        </select>
+        <a class="btn btn-default" ui-sref="seafood-type({id: selectedCity})">Proceed</a>
+      </div>
+    </div>
+  </div>
+</main>

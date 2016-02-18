@@ -4,17 +4,11 @@
  */
 
 'use strict';
-import sqldb from '../sqldb';
-var Thing = sqldb.Thing;
-var User = sqldb.User;
-var City = sqldb.City;
+import Thing from '../api/thing/thing.model';
 
-Thing.sync({force: true})
+Thing.find({}).removeAsync()
   .then(() => {
-    return Thing.destroy({ where: {} });
-  })
-  .then(() => {
-    Thing.bulkCreate([{
+    Thing.create({
       name: 'Development Tools',
       info: 'Integration with popular tools such as Bower, Grunt, Babel, Karma, ' +
              'Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, ' +
@@ -41,36 +35,5 @@ Thing.sync({force: true})
       name: 'Deployment Ready',
       info: 'Easily deploy your app to Heroku or Openshift with the heroku ' +
              'and openshift subgenerators'
-    }]);
-  });
-
-User.sync({force: true})
-  .then(() => User.destroy({ where: {} }))
-  .then(() => {
-    User.bulkCreate([{
-      provider: 'local',
-      name: 'Test User',
-      email: 'test@example.com',
-      password: 'test'
-    }, {
-      provider: 'local',
-      role: 'admin',
-      name: 'Admin',
-      email: 'admin@example.com',
-      password: 'admin'
-    }])
-    .then(() => {
-      console.log('finished populating users');
-    });
-  });
-
-  City.sync({force: true})
-  .then(() => City.destroy({ where: {} }))
-  .then(() => {
-    City.bulkCreate([{
-      name: 'Hong Kong'
-    }])
-    .then(() => {
-      console.log('finished populating cities');
     });
   });

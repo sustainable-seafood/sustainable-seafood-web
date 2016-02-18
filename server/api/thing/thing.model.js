@@ -1,15 +1,11 @@
 'use strict';
 
-export default function(sequelize, DataTypes) {
-  return sequelize.define('Thing', {
-    _id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    name: DataTypes.STRING,
-    info: DataTypes.STRING,
-    active: DataTypes.BOOLEAN
-  });
-}
+var mongoose = require('bluebird').promisifyAll(require('mongoose'));
+
+var ThingSchema = new mongoose.Schema({
+  name: String,
+  info: String,
+  active: Boolean
+});
+
+export default mongoose.model('Thing', ThingSchema);

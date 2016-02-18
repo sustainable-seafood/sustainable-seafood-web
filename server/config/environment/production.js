@@ -13,15 +13,12 @@ module.exports = {
           process.env.PORT ||
           8080,
 
-  sequelize: {
-    uri:  process.env.SEQUELIZE_URI,
-    options: {
-      dialect: 'postgres',
-      port: 5432,
-      host: 'localhost',
-      define: {
-        timestamps: true
-      }
-    }
+  // MongoDB connection options
+  mongo: {
+    uri:  process.env.MONGOLAB_URI ||
+          process.env.MONGOHQ_URL ||
+          process.env.OPENSHIFT_MONGODB_DB_URL +
+          process.env.OPENSHIFT_APP_NAME ||
+          'mongodb://localhost/sustainableseafoodweb'
   }
 };

@@ -1,0 +1,13 @@
+<main aria-role="main" class="decision-page seafood-type-page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1 class="title">Please select<br>the seafood type you<br>are searching for:</h1>
+        <select name="seafood type" data-ng-model="selectedSeafood" data-ng-options="seafoodType._id as seafoodType.name for seafoodType in seafoodTypes" class="form-control">
+          <option value="" disabled selected>Pick a Seafood type</option>
+        </select>
+        <!-- <a class="btn btn-default" ui-sref="seafood-type({id: selectedSeafood})">Proceed</a> -->
+      </div>
+    </div>
+  </div>
+</main>
