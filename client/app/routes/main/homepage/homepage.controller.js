@@ -2,7 +2,7 @@
 
 (function() {
 
-class MainController {
+class HomepageController {
 
   constructor($http) {
     this.$http = $http;
@@ -11,6 +11,6 @@ class MainController {
 }
 
 angular.module('sustainableSeafoodWebApp')
-  .controller('MainController', MainController);
+  .controller('HomepageController', HomepageController);
 
 })();

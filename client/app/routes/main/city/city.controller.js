@@ -2,6 +2,6 @@
 
 angular.module('sustainableSeafoodWebApp')
   .controller('CityCtrl', function ($scope, CityService) {
-    $scope.CityService = CityService
-    $scope.CityService.getCities()
+    $scope.CityService = CityService;
+    $scope.CityService.getCities();
   });

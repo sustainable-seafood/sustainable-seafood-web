@@ -14,6 +14,6 @@ angular.module('sustainableSeafoodWebApp')
         function(err) {
           console.log(err);
         }
-      ).$promise;
+      );
     };
-  };
+  }

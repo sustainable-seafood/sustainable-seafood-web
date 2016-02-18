@@ -1,13 +1,13 @@
 'use strict';
 
-describe('Controller: MainController', function() {
+describe('Controller: HomepageController', function() {
 
   // load the controller's module
   beforeEach(module('sustainableSeafoodWebApp'));
   beforeEach(module('stateMock'));
 
   var scope;
-  var MainController;
+  var HomepageController;
   var state;
   var $httpBackend;
 
@@ -19,13 +19,8 @@ describe('Controller: MainController', function() {
 
     scope = $rootScope.$new();
     state = $state;
-    MainController = $controller('MainController', {
+    HomepageController = $controller('HomepageController', {
       $scope: scope
     });
   }));
-
-  it('should attach a list of things to the controller', function() {
-    $httpBackend.flush();
-    expect(MainController.awesomeThings.length).toBe(4);
-  });
 });

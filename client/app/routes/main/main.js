@@ -6,7 +6,7 @@ angular.module('sustainableSeafoodWebApp')
       .state('main', {
         url: '/',
         templateUrl: 'app/routes/main/homepage/homepage.html',
-        controller: 'MainController'
+        controller: 'HomepageController'
       })
       .state('city', {
         url: '^/cities',
