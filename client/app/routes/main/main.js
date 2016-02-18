@@ -14,8 +14,13 @@ angular.module('sustainableSeafoodWebApp')
         controller: 'CityCtrl'
       })
       .state('species', {
-        url: '^/cities/{id}/species',
+        url: '^/cities/{cityId}/species',
         templateUrl: 'app/routes/main/species/species.html',
         controller: 'SpeciesCtrl'
+      })
+      .state('choose-seafood', {
+        url: '^/cities/{cityId}/species/{speciesId}/choose-seafood',
+        templateUrl: 'app/routes/main/choose-seafood/choose-seafood.html',
+        controller: 'ChooseSeafoodCtrl'
       });
   });

@@ -11,5 +11,6 @@ angular.module('sustainableSeafoodWebApp')
         query: {
           method: 'GET'
         }
-      });
+      }
+    );
   });
