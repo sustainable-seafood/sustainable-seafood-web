@@ -5,8 +5,10 @@ angular.module('sustainableSeafoodWebApp')
 
   function CityService(City) {
     var service = this;
+
     service.cities = [];
-    this.getCities = function() {
+
+    service.getCities = function() {
       City.query({}, {},
         function(data) {
           service.cities = data.cities;

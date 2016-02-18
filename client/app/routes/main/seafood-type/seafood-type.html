@@ -3,10 +3,10 @@
     <div class="row">
       <div class="col-lg-12">
         <h1 class="title">Please select<br>the seafood type you<br>are searching for:</h1>
-        <select name="seafood type" data-ng-model="selectedSeafood" data-ng-options="seafoodType._id as seafoodType.name for seafoodType in seafoodTypes" class="form-control">
+        <select name="seafood type" data-ng-model="selectedSeafoodType" data-ng-options="seafoodType.id as seafoodType.name for seafoodType in SeafoodTypeService.seafoodTypes" class="form-control">
           <option value="" disabled selected>Pick a Seafood type</option>
         </select>
-        <!-- <a class="btn btn-default" ui-sref="seafood-type({id: selectedSeafood})">Proceed</a> -->
+        <!-- <a class="btn btn-default" ui-sref="seafood-type({id: selectedSeafoodType})">Proceed</a> -->
       </div>
     </div>
   </div>
