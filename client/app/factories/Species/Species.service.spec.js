@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: SeafoodType', function () {
+describe('Service: Species', function () {
 
   // load the service's module
   beforeEach(module('sustainableSeafoodWebApp'));
 
   // instantiate service
-  var SeafoodType;
-  beforeEach(inject(function (_SeafoodType_) {
-    SeafoodType = _SeafoodType_;
+  var Species;
+  beforeEach(inject(function (_Species_) {
+    Species = _Species_;
   }));
 
   it('should do something', function () {
-    expect(!!SeafoodType).toBe(true);
+    expect(!!Species).toBe(true);
   });
 
 });

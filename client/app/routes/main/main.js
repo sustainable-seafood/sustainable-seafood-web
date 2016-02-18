@@ -13,9 +13,9 @@ angular.module('sustainableSeafoodWebApp')
         templateUrl: 'app/routes/main/city/city.html',
         controller: 'CityCtrl'
       })
-      .state('seafood-type', {
-        url: '^/cities/{id}/seafood-types',
-        templateUrl: 'app/routes/main/seafood-type/seafood-type.html',
-        controller: 'SeafoodTypeCtrl'
+      .state('species', {
+        url: '^/cities/{id}/species',
+        templateUrl: 'app/routes/main/species/species.html',
+        controller: 'SpeciesCtrl'
       });
   });
