@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('sustainableSeafoodWebApp')
-  .factory('City', function ($resource, API) {
+  .factory('Species', function ($resource, API) {
     var url = API.endpoint;
-    return $resource(url + '/cities/:id',
+    return $resource(url + '/cities/:city_id/species/:id',
       {
+        city_id: '@_city_id',
         id: '@_id'
       },
       {
