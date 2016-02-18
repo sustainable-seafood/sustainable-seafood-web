@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="title">PICK A CITY</h1>
     <div class="form">
-      <form ng-submit="nextPage()">
+      <form name="chooseCity" ng-submit="nextPage()">
         <select name="city" data-ng-model="selectedCity" data-ng-options="city.id as city.name for city in CityService.cities" class="form-control" required>
           <option value="" disabled selected>Select the city you are in...</option>
         </select>

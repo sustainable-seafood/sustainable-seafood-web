@@ -2,7 +2,7 @@
   <div class="container">
     <h1 class="title">PICK A {{ SpeciesService.singleSpecies.name.toUpperCase() || 'SEAFOOD' }}</h1>
     <div class="form">
-      <form class="form" ng-submit="nextPage()">
+      <form name="chooseSeafood" ng-submit="nextPage()">
         <select name="seafood" data-ng-model="selectedSeafood" data-ng-options="seafood.id as seafood.name for seafood in SeafoodService.seafoods" class="form-control" required>
           <option value="" disabled selected>Pick a {{ SpeciesService.singleSpecies.name || 'seafood' }} type</option>
         </select>
