@@ -19,4 +19,4 @@ angular.module('sustainableSeafoodWebApp', [
     $rootScope.$on('$locationChangeSuccess', function() {
       $anchorScroll();
     });
-  })
+  });

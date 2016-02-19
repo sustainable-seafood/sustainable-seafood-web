@@ -1,33 +1,35 @@
 .homepage {
   text-align: center;
-  .container {
-    background-image: assets-url('homepage-cover.jpg');
+  height: 200vh;
+  color: #F4F6F7;
+  .container-fluid {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../assets/images/homepage-cover-2.jpg');
+  }
+  .container-fluid:first-child {
+    background-image: url('../assets/images/homepage-cover-1.jpg');
+  }
+  .first-page {    
     height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    .header {
-      width: 100vw;
-    }
-    .first-page {
-      width: 100vw;
-      color: $color-grey-dark;
-      .btn-default {
-        margin-top: 50px;
-        font-size: 20px;
-        background-color: $color-grey-dark;
-        color: $color-white-medium;
-        border-color: $color-grey-dark;
-      }
-      .btn-default:hover {
-        background-color: $color-grey-light;
-        color: $color-grey-darkest;
-        border-color: $color-grey-light;
-      }
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    .btn-default {
+      max-width: 200px;
     }
   }
   .second-page {
-    width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    ul {
+      list-style-type: none;
+    }
   }
 }

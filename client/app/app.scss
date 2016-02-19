@@ -4,11 +4,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
-@import 'styles/colors';
-
 // General layout
 html, body, .body {
-  background-color: $color-white-medium;
+  background-color: white;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -26,48 +24,13 @@ html, body, .body {
   padding: 0.2em 0;
 }
 
-.decision-page {
-  height: 100vh;
-  text-align: center;
-  .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    .form {
-      font-size: 13px;
-      margin-top: 20px;
-      form {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        max-width: 300px;
-        height: 80px;
-        .btn-default {
-          align-self: center;
-        }
-      }
-    }
-  }
-}
-
-.ng-enter {
-  animation: slideInUp 0.5s ease-in;
-}
-
-@keyframes slideInUp {
-  from { transform: translateY(100vh); }
-  to   { transform: translateY(0);    }
-}
-
 // Component styles are injected through grunt
 // injector
+@import 'directives/footer/footer.scss';
 @import 'routes/main/choose-seafood/choose-seafood.scss';
 @import 'routes/main/city/city.scss';
 @import 'routes/main/homepage/homepage.scss';
 @import 'routes/main/species/species.scss';
 @import 'styles/colors.scss';
-@import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 // endinjector
