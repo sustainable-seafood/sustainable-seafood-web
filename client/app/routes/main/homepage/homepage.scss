@@ -1,28 +1,32 @@
 .homepage {
   text-align: center;
-  header {
-    background-color: $color-grey-light;
-    color: $color-grey-darkest;
-    h1 {
-      margin-top: 60px;
+  .container {
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    .header {
+      width: 100vw;
     }
-    p {
-      margin-top: 40px;
+    .first-page {
+      width: 100vw;
+      color: $color-grey-dark;
+      .btn-default {
+        margin-top: 50px;
+        font-size: 20px;
+        background-color: $color-grey-dark;
+        color: $color-white-medium;
+        border-color: $color-grey-dark;
+      }
+      .btn-default:hover {
+        background-color: $color-grey-light;
+        color: $color-grey-darkest;
+        border-color: $color-grey-light;
+      }
     }
   }
-  .main-content {
-    color: $color-grey-dark;
-    .btn-default {
-      margin-top: 50px;
-      font-size: 20px;
-      background-color: $color-grey-dark;
-      color: $color-white-medium;
-      border-color: $color-grey-dark;
-    }
-    .btn-default:hover {
-      background-color: $color-grey-light;
-      color: $color-grey-darkest;
-      border-color: $color-grey-light;
-    }
+  .second-page {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
   }
 }
