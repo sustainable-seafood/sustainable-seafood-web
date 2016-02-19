@@ -20,4 +20,3 @@ angular.module('sustainableSeafoodWebApp', [
       $anchorScroll();
     });
   })
-  .constant('API', {endpoint:'http://localhost:3000/v1', frontend:'http://localhost:9000'});

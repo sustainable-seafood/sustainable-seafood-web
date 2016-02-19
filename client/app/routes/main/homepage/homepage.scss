@@ -1,6 +1,7 @@
 .homepage {
   text-align: center;
   .container {
+    background-image: assets-url('homepage-cover.jpg');
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
