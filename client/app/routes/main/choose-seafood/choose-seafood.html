@@ -1,12 +1,18 @@
-<main aria-role="main" class="decision-page choose-seafood-page">
+<main aria-role="main" class="choose-seafood-page">
   <div class="container">
-    <h1 class="title">PICK A {{ SpeciesService.singleSpecies.name.toUpperCase() || 'SEAFOOD' }}</h1>
     <div class="form">
-      <form name="chooseSeafood" ng-submit="nextPage()">
-        <select name="seafood" data-ng-model="selectedSeafood" data-ng-options="seafood.id as seafood.name for seafood in SeafoodService.seafoods" class="form-control" required>
-          <option value="" disabled selected>Pick a {{ SpeciesService.singleSpecies.name || 'seafood' }} type</option>
-        </select>
-        <button type="submit" class="btn btn-default">Proceed</button>
+      <form name="vm.chooseSeafood" ng-submit="showSeafood()">
+        <div class="form-group">
+          <select name="species" class="form-control" data-ng-model="vm.selection.species" data-ng-options="species.id as species.name for species in vm.SpeciesService.species" ng-change="vm.SpeciesService.getSpecificSeafoods(vm.selection.species)" required>
+            <option value="" disabled selected>Pick a species</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <select name="seafood" class="form-control" data-ng-model="vm.selection.seafood" data-ng-options="seafood.id as seafood.name for seafood in vm.SpeciesService.specificSeafoods" data-ng-disabled="vm.selection.species == null" required>
+            <option value="" disabled selected>Pick a seafood type</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-default" data-ng-disabled="vm.chooseSeafood.$invalid">Proceed</button>
       </form>
     </div>
   </div>

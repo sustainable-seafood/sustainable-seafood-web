@@ -8,10 +8,10 @@ angular.module('sustainableSeafoodWebApp')
 
     service.seafoods = [];
 
-    service.getSeafoods = function(cityId, speciesId) {
-      Seafood.query({city_id: cityId, species_id: speciesId}, {},
+    service.getSeafood = function() {
+      Seafood.get({}, {},
         function(data) {
-          console.log(data)
+          console.log(data);
           service.seafoods = data.seafoods;
         },
         function(err) {

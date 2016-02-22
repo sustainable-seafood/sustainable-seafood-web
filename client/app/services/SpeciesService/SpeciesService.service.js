@@ -6,11 +6,12 @@ angular.module('sustainableSeafoodWebApp')
   function SpeciesService(Species) {
     var service = this;
 
-    service.species = [];
-    service.singleSpecies = {};
+    service.species          = [];
+    service.specificSeafoods = [];
+    service.singleSpecies    = {};
 
-    service.getSpecies = function(cityId) {
-      Species.query({city_id: cityId}, {},
+    service.getSpecies = function() {
+      Species.get({}, {},
         function(data) {
           service.species = data.species;
         },
@@ -20,8 +21,19 @@ angular.module('sustainableSeafoodWebApp')
       );
     };
 
-    service.getSingleSpecies = function(cityId, speciesId) {
-      Species.query({city_id: cityId, id: speciesId}, {},
+    service.getSpecificSeafoods = function(speciesId) {
+      Species.query({id: speciesId}, {},
+        function(data) {
+          service.specificSeafoods = data.seafoods;
+        },
+        function(err) {
+          console.log(err);
+        }
+      );
+    };
+
+    service.getSingleSpecies = function(speciesId) {
+      Species.get({id: speciesId}, {},
         function(data) {
           service.singleSpecies = data.species;
         },

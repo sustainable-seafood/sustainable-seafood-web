@@ -3,14 +3,22 @@
 angular.module('sustainableSeafoodWebApp')
   .factory('Species', function ($resource, API) {
     var url = API.endpoint;
-    return $resource(url + '/cities/:city_id/species/:id',
+    return $resource(url + '/species/:id/:controller',
       {
-        city_id: '@_city_id',
         id: '@_id'
       },
       {
+        get: {
+          method: 'GET',
+          params: {
+            controller: ''
+          }
+        },
         query: {
-          method: 'GET'
+          method: 'GET',
+          params: {
+            controller: 'seafoods'
+          }
         }
       }
     );
