@@ -7,7 +7,7 @@
         </select>
       </div>
       <div class="form-group">
-        <select name="seafood" class="form-control" data-ng-model="vm.selection.seafood" data-ng-options="seafood.id as seafood.name for seafood in vm.SpeciesService.specificSeafoods" data-ng-disabled="vm.disableSeafoodOptions || vm.processing" required>
+        <select name="seafood" class="form-control" data-ng-model="vm.selection.seafood" data-ng-options="seafood as seafood.name for seafood in vm.scopedSeafoods" data-ng-disabled="vm.disableSeafoodOptions || vm.processing" required>
           <option value="" disabled selected>Pick a seafood type</option>
         </select>
       </div>
@@ -17,10 +17,10 @@
   <div ng-show="vm.picker" class="display">
     <i class="glyphicon glyphicon-remove" ng-click="vm.closeSeafood()"></i>
     <div class="title-group">
-      <h3>{{ vm.SeafoodService.seafood.name }}</h3>
-      <p>Source: {{ vm.SeafoodService.seafood.source_location }}</p>
+      <h3>{{ vm.selection.seafood.name }}</h3>
+      <p>Source: {{ vm.selection.seafood.source_location }}</p>
     </div>
-    <ul data-ng-repeat="fact in vm.SeafoodService.seafood.facts">
+    <ul data-ng-repeat="fact in vm.selection.seafood.facts">
       <li>{{ fact }}</li>
     </ul>
   </div>

@@ -6,7 +6,8 @@ angular.module('sustainableSeafoodWebApp')
   function SeafoodService(Seafood, $q) {
     var service = this;
 
-    service.seafood = {};
+    service.seafood  = {};
+    service.seafoods = [];
 
     service.getSeafood = function(seafoodId) {
       return $q(function(resolve, reject) {
@@ -20,5 +21,16 @@ angular.module('sustainableSeafoodWebApp')
           }
         );
       });
+    }
+
+    service.getSeafoodList = function() {
+      Seafood.get({}, {},
+        function(data) {
+          service.seafoods = data.seafoods;
+        },
+        function(err) {
+          console.log(err);
+        }
+      );
     }
   }
