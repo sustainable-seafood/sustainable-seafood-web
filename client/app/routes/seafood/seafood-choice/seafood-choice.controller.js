@@ -25,10 +25,12 @@ angular.module('sustainableSeafoodWebApp')
       };
 
       vm.showSeafood = function() {
-        vm.processing = true;
+        vm.processing            = true;
         vm.picker                = true;
         vm.processing            = false;
         vm.disableSeafoodOptions = true;
+        vm.harvestingMethod = true;
+        console.log(vm.selection.seafood);
       };
 
       vm.closeSeafood = function() {

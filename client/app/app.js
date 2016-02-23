@@ -6,7 +6,8 @@ angular.module('sustainableSeafoodWebApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ngAnimate'
+  'ngAnimate',
+  'toggle-switch'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

@@ -20,6 +20,14 @@
       <h3>{{ vm.selection.seafood.name }}</h3>
       <p>Source: {{ vm.selection.seafood.source_location }}</p>
     </div>
+    <div class="harvesting-method">
+      <label>Harvesting Method</label>
+      <toggle-switch
+        ng-model="vm.harvestingMethod"
+        on-label="Farmed"
+        off-label="Wild">
+      </toggle-switch>
+    </div>
     <ul data-ng-repeat="fact in vm.selection.seafood.facts">
       <li>{{ fact }}</li>
     </ul>
