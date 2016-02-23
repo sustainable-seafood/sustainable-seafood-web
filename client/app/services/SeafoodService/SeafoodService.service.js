@@ -3,20 +3,22 @@
 angular.module('sustainableSeafoodWebApp')
   .service('SeafoodService', SeafoodService);
 
-  function SeafoodService(Seafood) {
+  function SeafoodService(Seafood, $q) {
     var service = this;
 
-    service.seafoods = [];
+    service.seafood = {};
 
-    service.getSeafood = function() {
-      Seafood.get({}, {},
-        function(data) {
-          console.log(data);
-          service.seafoods = data.seafoods;
-        },
-        function(err) {
-          console.log(err);
-        }
-      );
+    service.getSeafood = function(seafoodId) {
+      return $q(function(resolve, reject) {
+        Seafood.get({id: seafoodId}, {},
+          function(data) {
+            service.seafood = data.seafood;
+            resolve();
+          },
+          function(err) {
+            reject(err);
+          }
+        );
+      });
     }
   }

@@ -7,10 +7,23 @@ angular.module('sustainableSeafoodWebApp')
       
       var vm = this;
 
-      vm.selection = {};
+      vm.selection  = {};
+      vm.picker     = false;
+      vm.processing = false;
 
+      vm.SeafoodService = SeafoodService;
       vm.SpeciesService = SpeciesService;
       vm.SpeciesService.getSpecies();
 
-      vm.SeafoodService = SeafoodService;
+      vm.showSeafood = function() {
+        vm.processing = true;
+        vm.SeafoodService.getSeafood(vm.selection.seafood)
+          .then(function() {
+            vm.picker     = true;
+            vm.processing = false;
+          }, function(err) {
+            console.log(err);
+          }
+        );
+      };
     };
