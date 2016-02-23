@@ -1,23 +1,24 @@
-.choose-seafood-page {
-  .container {
-    .form {
+.seafood-choice {
+  margin-top: 10px;
+  height: 540px;
+  border: thin solid grey;
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    form {
+      height: 30%;
       display: flex;
-      justify-content: flex-start;
-      padding-bottom: 10px;
-      border-bottom: medium solid black;
-      form {
-        height: 60px;
-        width: 420px;
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
-        align-content: space-around;
-        .form-group {
-          margin: 0;
-        }
-        .btn-default {
-          margin-left: 25px;
-        }
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .form-group {
+        margin: 0;
+        width: 150px;
+      }
+      .fade {
+        opacity: 0.5;
       }
     }
   }
