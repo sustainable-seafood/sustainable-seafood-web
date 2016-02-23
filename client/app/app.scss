@@ -4,11 +4,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/vendor/assets/font
 $fa-font-path: "../bower_components/font-awesome/fonts";
 @import '../bower_components/font-awesome/scss/font-awesome';
 
-@import 'styles/colors';
-
 // General layout
 html, body, .body {
-  background-color: $color-white-medium;
+  background-color: white;
   height: 100%;
   width: 100%;
   padding: 0;
@@ -18,7 +16,6 @@ html, body, .body {
 /**
  * App-wide Styles
  */
-
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -26,38 +23,12 @@ html, body, .body {
   padding: 0.2em 0;
 }
 
-.decision-page {
-  text-align: center;
-  .title {
-    text-align: center;
-    margin-top: 100px;
-  }
-  .form-control {
-    margin-top: 40px;
-    margin-left: 40%;
-    font-size: 16px;
-    width: 20%;
-  }
-  .btn-default {
-    margin-top: 20px;
-    font-size: 16px;
-    background-color: $color-grey-dark;
-    color: $color-white-medium;
-    border-color: $color-grey-dark;
-  }
-  .btn-default:hover {
-    background-color: $color-grey-light;
-    color: $color-grey-darkest;
-    border-color: $color-grey-light;
-  }
-}
-
 // Component styles are injected through grunt
 // injector
-@import 'routes/main/city/city.scss';
-@import 'routes/main/homepage/homepage.scss';
-@import 'routes/main/species/species.scss';
+@import 'directives/footer/footer.scss';
+@import 'routes/homepage/homepage.scss';
+@import 'routes/seafood/seafood-choice/seafood-choice.scss';
+@import 'routes/seafood/seafood.scss';
 @import 'styles/colors.scss';
-@import '../components/footer/footer.scss';
 @import '../components/modal/modal.scss';
 // endinjector

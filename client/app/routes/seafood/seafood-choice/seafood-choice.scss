@@ -1,0 +1,25 @@
+.seafood-choice {
+  margin-top: 10px;
+  height: 540px;
+  border: thin solid grey;
+  .form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    form {
+      height: 30%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      .form-group {
+        margin: 0;
+        width: 150px;
+      }
+      .fade {
+        opacity: 0.5;
+      }
+    }
+  }
+}

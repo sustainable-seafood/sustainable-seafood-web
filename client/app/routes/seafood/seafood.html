@@ -1,0 +1,14 @@
+<main aria-role="main" class="seafood-page">
+  <header>
+    <div class="container">
+      <a ui-sref="#" ng-click="vm.moveBack()">
+        <i class="glyphicon glyphicon-backward"></i>
+      </a>
+      <h1>HKEatSustainable</h1>
+      <a ui-sref="#" ng-click="vm.moveForward()" ng-show="vm.switch">
+        <i class="glyphicon glyphicon-forward"></i>
+      </a>
+    </div>
+  </header>
+  <div ui-view></div>
+</main>

@@ -1,0 +1,35 @@
+.homepage {
+  text-align: center;
+  height: 200vh;
+  color: #F4F6F7;
+  .container-fluid {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../assets/images/homepage-cover-2.jpg');
+  }
+  .container-fluid:first-child {
+    background-image: url('../assets/images/homepage-cover-1.jpg');
+  }
+  .first-page {    
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: space-around;
+    .btn-default {
+      max-width: 200px;
+    }
+  }
+  .second-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    ul {
+      list-style-type: none;
+    }
+  }
+}

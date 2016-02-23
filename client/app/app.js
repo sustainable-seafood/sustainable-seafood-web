@@ -5,7 +5,8 @@ angular.module('sustainableSeafoodWebApp', [
   'ngResource',
   'ngSanitize',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ngAnimate'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
@@ -18,5 +19,4 @@ angular.module('sustainableSeafoodWebApp', [
     $rootScope.$on('$locationChangeSuccess', function() {
       $anchorScroll();
     });
-  })
-  .constant('API', {endpoint:'http://localhost:3000/v1', frontend:'http://localhost:9000'});
+  });

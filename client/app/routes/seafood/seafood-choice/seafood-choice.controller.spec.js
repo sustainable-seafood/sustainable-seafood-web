@@ -1,16 +1,16 @@
 'use strict';
 
-describe('Controller: CityCtrl', function () {
+describe('Controller: SeafoodChoiceCtrl', function () {
 
   // load the controller's module
   beforeEach(module('sustainableSeafoodWebApp'));
 
-  var CityCtrl, scope;
+  var SeafoodChoiceCtrl, scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function ($controller, $rootScope) {
     scope = $rootScope.$new();
-    CityCtrl = $controller('CityCtrl', {
+    SeafoodChoiceCtrl = $controller('SeafoodChoiceCtrl', {
       $scope: scope
     });
   }));

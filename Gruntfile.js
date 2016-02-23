@@ -314,17 +314,15 @@ module.exports = function (grunt) {
     // `server/config/environment/shared.js`
     ngconstant: {
       options: {
-        name: 'sustainableSeafoodWebApp.constants',
-        dest: '<%= yeoman.client %>/app/app.constant.js',
-        deps: [],
-        wrap: true,
-        configPath: '<%= yeoman.server %>/config/environment/shared'
+        name: 'sustainableSeafoodWebApp',
+        dest: '<%= yeoman.client %>/app/config.js',
+        deps: false
       },
-      app: {
-        constants: function() {
-          return {
-            appConfig: require('./' + grunt.config.get('ngconstant.options.configPath'))
-          };
+      production: {
+        constants: {
+          API: {
+            endpoint:   process.env.BACKEND_URL || 'http://localhost:3000/v1'
+          }
         }
       }
     },
