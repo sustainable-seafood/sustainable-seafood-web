@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('sustainableSeafoodWebApp')
-  .controller('ChooseSeafoodCtrl', ChooseSeafoodCtrl);
+  .controller('SeafoodChoiceCtrl', SeafoodChoiceCtrl);
 
-    function ChooseSeafoodCtrl(SeafoodService, SpeciesService) {
+    function SeafoodChoiceCtrl(SeafoodService, SpeciesService) {
       
       var vm = this;
 

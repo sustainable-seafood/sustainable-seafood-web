@@ -26,8 +26,8 @@ html, body, .body {
 // Component styles are injected through grunt
 // injector
 @import 'directives/footer/footer.scss';
-@import 'routes/main/choose-seafood/choose-seafood.scss';
-@import 'routes/main/homepage/homepage.scss';
+@import 'routes/homepage/homepage.scss';
+@import 'routes/seafood/seafood-choice/seafood-choice.scss';
 @import 'styles/colors.scss';
 @import '../components/modal/modal.scss';
 // endinjector
