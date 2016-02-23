@@ -14,5 +14,11 @@ angular.module('sustainableSeafoodWebApp')
         templateUrl: 'app/routes/seafood/seafood-choice/seafood-choice.html',
         controller: 'SeafoodChoiceCtrl',
         controllerAs: 'vm'
+      })
+      .state('seafood.display', {
+        url: '/:id/display',
+        templateUrl: 'app/routes/seafood/seafood-display/seafood-display.html',
+        controller: 'SeafoodDisplayCtrl',
+        controllerAs: 'vm'
       });
   });

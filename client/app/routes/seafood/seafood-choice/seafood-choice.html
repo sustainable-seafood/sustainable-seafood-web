@@ -2,18 +2,26 @@
   <div class="form" ng-hide="vm.picker">
     <form name="vm.chooseSeafood" ng-submit="vm.showSeafood()">
       <div class="form-group">
-        <select name="species" class="form-control" data-ng-model="vm.selection.species" data-ng-options="species.id as species.name for species in vm.SpeciesService.species" ng-change="vm.SpeciesService.getSpecificSeafoods(vm.selection.species)" data-ng-disabled="vm.processing" required>
+        <select name="species" class="form-control" data-ng-model="vm.selection.species" data-ng-options="species.id as species.name for species in vm.SpeciesService.species" ng-change="vm.getSeafoods()" data-ng-disabled="vm.processing" required>
           <option value="" disabled selected>Pick a species</option>
         </select>
       </div>
       <div class="form-group">
-        <select name="seafood" class="form-control" data-ng-model="vm.selection.seafood" data-ng-options="seafood.id as seafood.name for seafood in vm.SpeciesService.specificSeafoods" data-ng-disabled="vm.selection.species == null || vm.processing" required>
+        <select name="seafood" class="form-control" data-ng-model="vm.selection.seafood" data-ng-options="seafood.id as seafood.name for seafood in vm.SpeciesService.specificSeafoods" data-ng-disabled="vm.disableSeafoodOptions || vm.processing" required>
           <option value="" disabled selected>Pick a seafood type</option>
         </select>
       </div>
       <button type="submit" class="btn btn-default" data-ng-disabled="vm.chooseSeafood.$invalid || vm.processing">Proceed</button>
     </form>
   </div>
-  <div ng-show="vm.picker">
+  <div ng-show="vm.picker" class="display">
+    <i class="glyphicon glyphicon-remove"></i>
+    <div class="title-group">
+      <h3>{{ vm.SeafoodService.seafood.name }}</h3>
+      <p>Source: {{ vm.SeafoodService.seafood.source_location }}</p>
+    </div>
+    <ul data-ng-repeat="fact in vm.SeafoodService.seafood.facts">
+      <li>{{ fact }}</li>
+    </ul>
   </div>
 </div>

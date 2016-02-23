@@ -22,4 +22,27 @@
       }
     }
   }
+  .display {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    i {
+      position: relative;
+      left: -340px;
+      font-size: 20px;
+      opacity: 0.5;
+    }
+    .title-group {
+      height: 65px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      h3 {
+        margin: 0;
+      }
+    }
+  }
 }

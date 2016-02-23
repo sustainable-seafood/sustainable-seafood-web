@@ -7,17 +7,13 @@ angular.module('sustainableSeafoodWebApp')
       
       var vm = this;
 
-      vm.switch = $state.is('seafood.choice')
+      vm.switch = $state.is('seafood.choice') || $state.is('seafood.display')
 
-      vm.moveBack = function() {
-        if(vm.switch) {
-          $state.go('home');
-        } else {
-          $state.go('seafood.choice');
-        }
-      }
-
-      vm.moveForward = function() {
-        $state.go('seafood.comparison');
+      if(vm.switch) {
+        vm.back    = 'home'
+        vm.forward = 'seafood.comparison'
+      } else {
+        vm.back    = 'seafood.choice'
+        vm.forward = '#'
       }
     };

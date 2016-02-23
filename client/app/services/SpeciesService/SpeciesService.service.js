@@ -3,7 +3,7 @@
 angular.module('sustainableSeafoodWebApp')
   .service('SpeciesService', SpeciesService);
 
-  function SpeciesService(Species) {
+  function SpeciesService(Species, $q) {
     var service = this;
 
     service.species          = [];
@@ -22,14 +22,17 @@ angular.module('sustainableSeafoodWebApp')
     };
 
     service.getSpecificSeafoods = function(speciesId) {
-      Species.query({id: speciesId}, {},
-        function(data) {
-          service.specificSeafoods = data.seafoods;
-        },
-        function(err) {
-          console.log(err);
-        }
-      );
+      return $q(function(resolve, reject) {
+        Species.query({id: speciesId}, {},
+          function(data) {
+            service.specificSeafoods = data.seafoods;
+            resolve();
+          },
+          function(err) {
+            reject(err);
+          }
+        );
+      });
     };
 
     service.getSingleSpecies = function(speciesId) {
