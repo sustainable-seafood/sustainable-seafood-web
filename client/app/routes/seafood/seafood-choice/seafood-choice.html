@@ -15,7 +15,7 @@
     </form>
   </div>
   <div ng-show="vm.picker" class="display">
-    <i class="glyphicon glyphicon-remove"></i>
+    <i class="glyphicon glyphicon-remove" ng-click="vm.closeSeafood()"></i>
     <div class="title-group">
       <h3>{{ vm.SeafoodService.seafood.name }}</h3>
       <p>Source: {{ vm.SeafoodService.seafood.source_location }}</p>

@@ -23,14 +23,13 @@
     }
   }
   .display {
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     i {
-      position: relative;
-      left: -340px;
+      align-self: flex-start;
       font-size: 20px;
       opacity: 0.5;
     }

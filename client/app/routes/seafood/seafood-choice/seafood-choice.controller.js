@@ -32,11 +32,17 @@ angular.module('sustainableSeafoodWebApp')
         vm.SeafoodService.getSeafood(vm.selection.seafood)
           .then(function() {
             console.log(vm.SeafoodService.seafood)
-            vm.picker     = true;
-            vm.processing = false;
+            vm.picker                = true;
+            vm.processing            = false;
+            vm.selection             = {};
+            vm.disableSeafoodOptions = true;
           }, function(err) {
             console.log(err);
           }
         );
+      };
+
+      vm.closeSeafood = function() {
+        vm.picker = false;
       };
     };
